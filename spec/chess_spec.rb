@@ -6,15 +6,24 @@ class ChessValidator
 		@board=board
 	end
 
+
+
 	def check_moves(move = false)
 		if @board.empty?
 			return ['ILLEGAL']
 		end
 		move.map do |from, to|
-			to.split('')[1].to_i - from.split('')[1].to_i > 2 ? 'ILLEGAL' : 'LEGAL'
+			from, to = from.split('')[1].to_i, to.split('')[1].to_i
+
+			if from == 2
+				to - from > 2 ? 'ILLEGAL' : 'LEGAL'
+			else
+				to - from > 1 ? 'ILLEGAL' : 'LEGAL'
+			end	
 		end
 	end
 end
+
 describe "Chess Validator" do
 
 	it "all moves are illegal if there are no pieces" do
@@ -68,8 +77,8 @@ describe "Chess Validator" do
 		board = {
 			'a2'=>'wP',
 			'a3' => '--',
-			'b2'=>'wP',
-			'b3' => '--'
+			'b3'=>'wP',
+			'b5' => '--'
 		}
 
 		moves = {
@@ -79,13 +88,17 @@ describe "Chess Validator" do
 		expect(ChessValidator.new(board).check_moves(moves)).to eq(['ILLEGAL', 'ILLEGAL'])
 	end
 
+	it 'the board has one pawn trying to move to an occupied postion' do
+		board = {
+			'b3'=>'wP',
+			'b4' => 'wp'
+		}
 
-
-
-
-
-
-
+		moves = {
+			'b3'=>'b4'
+		}
+		expect(ChessValidator.new(board).check_moves(moves)).to eq(['ILLEGAL'])
+	end
 
 
 
