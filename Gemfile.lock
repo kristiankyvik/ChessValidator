@@ -2,10 +2,6 @@ GEM
   remote: https://rubygems.org/
   specs:
     diff-lcs (1.2.5)
-    mini_portile (0.6.0)
-    nokogiri (1.6.2.1)
-      mini_portile (= 0.6.0)
-    rack (1.5.2)
     rake (10.3.2)
     rspec (3.0.0)
       rspec-core (~> 3.0.0)
@@ -24,7 +20,5 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  nokogiri
-  rack
   rake
   rspec
