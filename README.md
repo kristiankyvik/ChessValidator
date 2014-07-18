@@ -1,3 +1,2 @@
 # Chess Validator
-[![Build
-Status](https://travis-ci.org/krisiankyvik/ChessValidator.png)](https://travis-ci.org/krisiankyvik/ChessValidator)
+[![Build Status](https://travis-ci.org/kristiankyvik/ChessValidator.svg?branch=master)](https://travis-ci.org/kristiankyvik/ChessValidator)
