@@ -1,5 +1,4 @@
 GEM
-<<<<<<< HEAD
   remote: https://rubygems.org/
   specs:
     diff-lcs (1.2.5)
@@ -23,11 +22,3 @@ PLATFORMS
 DEPENDENCIES
   rake
   rspec
-=======
-  specs:
-
-PLATFORMS
-  x64-mingw32
-
-DEPENDENCIES
->>>>>>> 922a759c35c3551bc0aa5580f8e961fbba0b4bb8
